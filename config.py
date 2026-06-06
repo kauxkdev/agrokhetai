@@ -1,20 +1,14 @@
 import streamlit as st
-import os
 
-# --- API KEYS ---
 try:
     GEMINI_API_KEY = st.secrets["AQ.Ab8RN6ISWTVO7JfzhP2TH8XbzA9v3MTBU5GivXbydXrPRv7AxQ"]
 except:
-    GEMINI_API_KEY = os.environ.get(
-        "AQ.Ab8RN6ISWTVO7JfzhP2TH8XbzA9v3MTBU5GivXbydXrPRv7AxQ", ""
-    )
+    GEMINI_API_KEY = ""AQ.Ab8RN6ISWTVO7JfzhP2TH8XbzA9v3MTBU5GivXbydXrPRv7AxQ
 
 try:
     WEATHER_API_KEY = st.secrets["6186e4f9d42ea1e07036b53bfd1848a4"]
 except:
-    WEATHER_API_KEY = os.environ.get(
-        "6186e4f9d42ea1e07036b53bfd1848a4", ""
-    )
+    WEATHER_API_KEY = "6186e4f9d42ea1e07036b53bfd1848a4"
 
 APP_NAME = "AgroKhet AI"
 APP_TAGLINE = "Smart Farming, Better Future"
