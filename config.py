@@ -1,9 +1,9 @@
 import streamlit as st
 
 try:
-    GEMINI_API_KEY = st.secrets["AQ.Ab8RN6ISWTVO7JfzhP2TH8XbzA9v3MTBU5GivXbydXrPRv7AxQ"]
+    GEMINI_API_KEY = st.secrets["AIzaSyB0pia4BoKmN9MxANH4USkupHLMeYq8iKY"]
 except:
-    GEMINI_API_KEY = "AQ.Ab8RN6ISWTVO7JfzhP2TH8XbzA9v3MTBU5GivXbydXrPRv7AxQ"
+    GEMINI_API_KEY = "AIzaSyB0pia4BoKmN9MxANH4USkupHLMeYq8iKY"
 
 try:
     WEATHER_API_KEY = st.secrets["6186e4f9d42ea1e07036b53bfd1848a4"]
