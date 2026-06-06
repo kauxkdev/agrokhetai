@@ -1,0 +1,583 @@
+/* =============================================
+         AgroKhet AI - Global Styles
+   ============================================= */
+
+/* --- IMPORT GOOGLE FONTS --- */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Rajdhani:wght@500;600;700&display=swap');
+
+/* --- GLOBAL RESET --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* --- MAIN APP BACKGROUND --- */
+.stApp {
+    background: linear-gradient(
+        135deg,
+        #F1F8E9 0%,
+        #E8F5E9 50%,
+        #FFF8E1 100%
+    );
+    min-height: 100vh;
+}
+
+/* --- HIDE STREAMLIT DEFAULT ELEMENTS --- */
+#MainMenu {visibility: hidden;}
+footer {visibility: hidden;}
+header {visibility: hidden;}
+.stDeployButton {display: none;}
+
+/* --- SPLASH SCREEN --- */
+.splash-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: linear-gradient(
+        135deg,
+        #1B5E20 0%,
+        #2E7D32 40%,
+        #FF6F00 100%
+    );
+    text-align: center;
+    padding: 20px;
+}
+
+.splash-logo {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 5px solid #F9A825;
+    margin-bottom: 20px;
+    animation: pulse 2s infinite;
+}
+
+.splash-title {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 52px;
+    font-weight: 700;
+    color: #F9A825;
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.3);
+    letter-spacing: 3px;
+}
+
+.splash-tagline {
+    font-size: 18px;
+    color: #C8E6C9;
+    margin-top: 10px;
+    font-weight: 300;
+    letter-spacing: 1px;
+}
+
+.splash-loader {
+    margin-top: 40px;
+    width: 200px;
+    height: 6px;
+    background: rgba(255,255,255,0.2);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.splash-loader-bar {
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        #F9A825,
+        #FF6F00
+    );
+    border-radius: 10px;
+    animation: loading 2.5s ease-in-out;
+}
+
+/* --- AUTH CONTAINER --- */
+.auth-container {
+    max-width: 480px;
+    margin: 40px auto;
+    background: white;
+    border-radius: 24px;
+    padding: 40px;
+    box-shadow: 0 20px 60px rgba(46,125,50,0.15);
+    border-top: 6px solid #2E7D32;
+}
+
+.auth-title {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 32px;
+    font-weight: 700;
+    color: #2E7D32;
+    text-align: center;
+    margin-bottom: 8px;
+}
+
+.auth-subtitle {
+    font-size: 14px;
+    color: #888;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+/* --- INPUT FIELDS --- */
+.stTextInput > div > div > input {
+    border: 2px solid #E0E0E0 !important;
+    border-radius: 12px !important;
+    padding: 12px 16px !important;
+    font-size: 15px !important;
+    transition: all 0.3s ease !important;
+    background: #FAFAFA !important;
+}
+
+.stTextInput > div > div > input:focus {
+    border-color: #2E7D32 !important;
+    background: white !important;
+    box-shadow: 0 0 0 3px rgba(46,125,50,0.1) !important;
+}
+
+/* --- BUTTONS --- */
+.stButton > button {
+    width: 100%;
+    background: linear-gradient(
+        135deg,
+        #2E7D32,
+        #FF6F00
+    ) !important;
+    color: white !important;
+    border: none !important;
+    border-radius: 12px !important;
+    padding: 14px 28px !important;
+    font-size: 16px !important;
+    font-weight: 600 !important;
+    letter-spacing: 0.5px !important;
+    cursor: pointer !important;
+    transition: all 0.3s ease !important;
+    box-shadow: 0 4px 15px rgba(46,125,50,0.3) !important;
+}
+
+.stButton > button:hover {
+    transform: translateY(-2px) !important;
+    box-shadow: 0 8px 25px rgba(46,125,50,0.4) !important;
+}
+
+/* --- NAVBAR --- */
+.navbar {
+    background: linear-gradient(
+        135deg,
+        #1B5E20,
+        #2E7D32
+    );
+    padding: 15px 30px;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 25px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+}
+
+.navbar-brand {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 28px;
+    font-weight: 700;
+    color: #F9A825;
+    letter-spacing: 2px;
+}
+
+.navbar-user {
+    font-size: 14px;
+    color: #C8E6C9;
+    font-weight: 500;
+}
+
+/* --- DASHBOARD CARDS --- */
+.card {
+    background: white;
+    border-radius: 20px;
+    padding: 24px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    transition: all 0.3s ease;
+    border-left: 5px solid #2E7D32;
+    margin-bottom: 20px;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 35px rgba(0,0,0,0.12);
+}
+
+.card-icon {
+    font-size: 40px;
+    margin-bottom: 12px;
+}
+
+.card-title {
+    font-size: 18px;
+    font-weight: 600;
+    color: #1B5E20;
+    margin-bottom: 6px;
+}
+
+.card-value {
+    font-size: 28px;
+    font-weight: 700;
+    color: #FF6F00;
+}
+
+/* --- SECTION HEADERS --- */
+.section-header {
+    background: linear-gradient(
+        135deg,
+        #2E7D32,
+        #FF6F00
+    );
+    color: white;
+    padding: 16px 24px;
+    border-radius: 16px;
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 26px;
+    font-weight: 700;
+    margin-bottom: 24px;
+    letter-spacing: 1px;
+    box-shadow: 0 4px 15px rgba(46,125,50,0.3);
+}
+
+/* --- SCAN RESULT BOX --- */
+.result-box {
+    background: linear-gradient(
+        135deg,
+        #E8F5E9,
+        #FFF8E1
+    );
+    border-radius: 20px;
+    padding: 28px;
+    border: 2px solid #81C784;
+    margin-top: 20px;
+}
+
+.result-disease {
+    font-size: 24px;
+    font-weight: 700;
+    color: #C62828;
+    margin-bottom: 12px;
+}
+
+.result-confidence {
+    font-size: 16px;
+    color: #2E7D32;
+    font-weight: 600;
+    margin-bottom: 16px;
+}
+
+.result-section-title {
+    font-size: 16px;
+    font-weight: 600;
+    color: #FF6F00;
+    margin-top: 16px;
+    margin-bottom: 8px;
+}
+
+/* --- WEATHER CARD --- */
+.weather-card {
+    background: linear-gradient(
+        135deg,
+        #1565C0,
+        #42A5F5
+    );
+    border-radius: 20px;
+    padding: 28px;
+    color: white;
+    text-align: center;
+    box-shadow: 0 8px 25px rgba(21,101,192,0.3);
+}
+
+.weather-temp {
+    font-size: 64px;
+    font-weight: 700;
+    line-height: 1;
+}
+
+.weather-city {
+    font-size: 20px;
+    opacity: 0.9;
+    margin-top: 8px;
+}
+
+.weather-desc {
+    font-size: 16px;
+    opacity: 0.8;
+    margin-top: 4px;
+    text-transform: capitalize;
+}
+
+/* --- MARKET PRICE TABLE --- */
+.price-card {
+    background: white;
+    border-radius: 16px;
+    padding: 20px;
+    border-left: 5px solid #F9A825;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    margin-bottom: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.price-crop {
+    font-size: 18px;
+    font-weight: 600;
+    color: #1B5E20;
+}
+
+.price-value {
+    font-size: 22px;
+    font-weight: 700;
+    color: #FF6F00;
+}
+
+.price-change-up {
+    color: #2E7D32;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.price-change-down {
+    color: #C62828;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+/* --- CHAT BOT --- */
+.chat-container {
+    background: white;
+    border-radius: 20px;
+    padding: 20px;
+    height: 450px;
+    overflow-y: auto;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    margin-bottom: 16px;
+}
+
+.chat-message-user {
+    background: linear-gradient(
+        135deg,
+        #2E7D32,
+        #388E3C
+    );
+    color: white;
+    padding: 12px 18px;
+    border-radius: 18px 18px 4px 18px;
+    max-width: 75%;
+    margin-left: auto;
+    margin-bottom: 12px;
+    font-size: 15px;
+}
+
+.chat-message-bot {
+    background: #F1F8E9;
+    color: #1B1B1B;
+    padding: 12px 18px;
+    border-radius: 18px 18px 18px 4px;
+    max-width: 75%;
+    margin-right: auto;
+    margin-bottom: 12px;
+    font-size: 15px;
+    border-left: 3px solid #FF6F00;
+}
+
+/* --- NEWS CARD --- */
+.news-card {
+    background: white;
+    border-radius: 16px;
+    padding: 20px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    margin-bottom: 16px;
+    border-top: 4px solid #2E7D32;
+    transition: all 0.3s ease;
+}
+
+.news-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+}
+
+.news-title {
+    font-size: 16px;
+    font-weight: 600;
+    color: #1B5E20;
+    margin-bottom: 8px;
+}
+
+.news-date {
+    font-size: 13px;
+    color: #888;
+}
+
+/* --- ANIMATIONS --- */
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+@keyframes loading {
+    0% { width: 0%; }
+    100% { width: 100%; }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.fade-in {
+    animation: fadeIn 0.6s ease forwards;
+}
+
+/* --- SCROLLBAR --- */
+::-webkit-scrollbar {
+    width: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background: #F1F8E9;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #81C784;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #358139;
+}
+
+/* --- SELECTBOX --- */
+.stSelectbox > div > div {
+    border-radius: 12px !important;
+    border: 2px solid #d6d4d4 !important;
+}
+
+/* --- SUCCESS / ERROR MESSAGES --- */
+.stSuccess {
+    border-radius: 12px !important;
+    border-left: 5px solid #3c803f !important;
+}
+
+.stError {
+    border-radius: 12px !important;
+    border-left: 5px solid #f94545 !important;
+}
+/* --- FIX INPUT LABELS COLOR --- */
+.stTextInput label,
+.stSelectbox label,
+.stTextArea label,
+.stDateInput label,
+.stNumberInput label,
+.stRadio label,
+.stFileUploader label {
+    color: #1B5E20 !important;
+    font-size: 14px !important;
+    font-weight: 600 !important;
+}
+
+/* --- FIX RADIO BUTTON TEXT --- */
+.stRadio > label {
+    color: #1B5E20 !important;
+    font-weight: 600 !important;
+}
+
+/* --- FIX TAB TEXT --- */
+.stTabs [data-baseweb="tab"] {
+    color: #1B5E20 !important;
+    font-weight: 600 !important;
+    font-size: 15px !important;
+}
+
+.stTabs [aria-selected="true"] {
+    color: #FF6F00 !important;
+    border-bottom: 3px solid #FF6F00 !important;
+}
+
+/* --- FIX SELECTBOX TEXT --- */
+.stSelectbox div[data-baseweb="select"] {
+    color: #1B5E20 !important;
+}
+
+/* --- FIX ALL GENERAL TEXT --- */
+p, div, span, label {
+    color: #1B5E20;
+}
+
+/* --- FIX PLACEHOLDER --- */
+::placeholder {
+    color: #aaa !important;
+    font-size: 13px !important;
+}
+
+/* --- FIX BUTTON TEXT --- */
+.stButton > button {
+    color: white !important;
+}
+
+/* --- FIX EXPANDER --- */
+.streamlit-expanderHeader {
+    color: #1B5E20 !important;
+    font-weight: 600 !important;
+    font-size: 15px !important;
+}
+
+/* --- FIX CHECKBOX --- */
+.stCheckbox label {
+    color: #1B5E20 !important;
+}
+
+/* --- FIX SPINNER TEXT --- */
+.stSpinner > div {
+    color: #2E7D32 !important;
+}
+/* --- FIX TYPED TEXT COLOR IN INPUTS --- */
+.stTextInput > div > div > input {
+    color: #1B5E20 !important;
+    background: white !important;
+    font-size: 15px !important;
+    font-weight: 500 !important;
+}
+
+/* --- FIX PASSWORD INPUT TEXT --- */
+input[type="password"] {
+    color: #1B5E20 !important;
+    background: white !important;
+}
+
+/* --- FIX ALL INPUT TEXT --- */
+input, textarea, select {
+    color: #1B5E20 !important;
+    background-color: white !important;
+}
+
+/* --- FIX TEXTAREA TEXT --- */
+.stTextArea > div > div > textarea {
+    color: #1B5E20 !important;
+    background: white !important;
+    font-size: 15px !important;
+}
+
+/* --- FIX SELECTBOX SELECTED TEXT --- */
+.stSelectbox > div > div {
+    color: #1B5E20 !important;
+    background: white !important;
+}
+
+/* --- FIX NUMBER INPUT --- */
+.stNumberInput > div > div > input {
+    color: #1B5E20 !important;
+    background: white !important;
+}
+
+/* --- FIX DATE INPUT --- */
+.stDateInput > div > div > input {
+    color: #1B5E20 !important;
+    background: white !important;
+}
