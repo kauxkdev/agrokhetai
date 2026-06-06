@@ -7,7 +7,7 @@ import google.generativeai as genai
 from config import GEMINI_API_KEY
 
 # --- CONFIGURE GEMINI ---
-genai.configure(api_key=GEMINI_API_KEY)
+genai.configure(api_key="AIzaSyB0pia4BoKmN9MxANH4USkupHLMeYq8iKY")
 
 # --- PLANT DATABASE ---
 PLANTS = {
