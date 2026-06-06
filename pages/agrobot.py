@@ -11,7 +11,7 @@ import os
 import time
 
 # --- CONFIGURE GEMINI ---
-genai.configure(api_key="AQ.Ab8RN6JjrNc6sfQFjIpt61Px8vaC1ut1IUYsx9xqZu2oXy8yMQ")
+genai.configure(api_key="AIzaSyB0pia4BoKmN9MxANH4USkupHLMeYq8iKY")
 
 # --- TRANSLATE TEXT ---
 def translate_text(text, target_lang):
