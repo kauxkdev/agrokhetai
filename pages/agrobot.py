@@ -3,15 +3,14 @@
 # =============================================
 
 import streamlit as st
-import google.generativeai as genai
 from config import GEMINI_API_KEY, LANGUAGES
+from google import genai
 from deep_translator import GoogleTranslator
 from gtts import gTTS
 import os
 import time
 
-# --- CONFIGURE GEMINI ---
-genai.configure(api_key="AIzaSyB0pia4BoKmN9MxANH4USkupHLMeYq8iKY")
+
 
 # --- TRANSLATE TEXT ---
 def translate_text(text, target_lang):
@@ -28,9 +27,9 @@ def translate_text(text, target_lang):
 # --- ASK AGROBOT ---
 def ask_agrobot(question, language_code, history):
     try:
-        model = genai.GenerativeModel(
-            "gemini-2.5-flash"
-        )
+        from google import genai
+        client= genai.Client(api_key=GEMINI_API_KEY)
+        
 
         # Build conversation history
         history_text = ""
@@ -68,8 +67,11 @@ def ask_agrobot(question, language_code, history):
         Give a helpful, practical answer.
         """
 
-        response = model.generate_content(prompt)
-        answer = response.text
+        response = client.models.generate_content(
+            model="gemini-2.5-flash",
+            contents=prompt
+        )
+        answer=response.text
 
         # Translate if needed
         if language_code != "en":
