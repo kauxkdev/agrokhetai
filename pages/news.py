@@ -3,19 +3,16 @@
 # =============================================
 
 import streamlit as st
-import google.generativeai as genai
 from config import GEMINI_API_KEY
 import datetime
+from google import genai
 
 # --- CONFIGURE GEMINI ---
-genai.configure(api_key="AQ.Ab8RN6JjrNc6sfQFjIpt61Px8vaC1ut1IUYsx9xqZu2oXy8yMQ")
 
 # --- GET AI AGRICULTURE NEWS ---
 def get_agri_news(category):
     try:
-        model = genai.GenerativeModel(
-            "gemini-2.5-flash"
-        )
+        client = genai.Client(api_key=GEMINI_API_KEY)
         prompt = f"""
         Give me 6 latest important agriculture
         news items for Indian farmers about:
@@ -32,7 +29,10 @@ def get_agri_news(category):
         Indian farmers in 2025-2026.
         Separate each news with ---
         """
-        response = model.generate_content(prompt)
+        response = client.models.generate_content(
+            model="gemini-2.5-flash",
+            contents= prompt
+        )
         return response.text
     except Exception as e:
         return f"❌ Error: {str(e)}"
@@ -524,7 +524,7 @@ def show():
                 Use emojis and clear formatting.
                 """
                 response = model.generate_content(
-                    prompt
+                   contents= prompt
                 )
                 advisory = response.text
 

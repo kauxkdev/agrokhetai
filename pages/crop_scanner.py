@@ -3,7 +3,6 @@
 # =============================================
 
 import streamlit as st
-import google.generativeai as genai
 from PIL import Image
 from database import save_scan
 from config import GEMINI_API_KEY, LANGUAGES
@@ -12,9 +11,9 @@ from gtts import gTTS
 import os
 import time
 import io
+from google import genai
 
-# --- CONFIGURE GEMINI ---
-genai.configure(api_key="AIzaSyB0pia4BoKmN9MxANH4USkupHLMeYq8iKY")
+
 
 # --- TRANSLATE TEXT ---
 def translate_text(text, target_lang):
@@ -31,7 +30,7 @@ def translate_text(text, target_lang):
 # --- ANALYZE CROP IMAGE ---
 def analyze_crop(image, language_code):
     try:
-        model = genai.GenerativeModel("gemini-2.5-flash")
+        client=genai.Client(api_key=GEMINI_API_KEY)
 
         prompt = """
         You are an expert agricultural scientist.
@@ -52,7 +51,10 @@ def analyze_crop(image, language_code):
         Format each point clearly with the number and label.
         """
 
-        response = model.generate_content([prompt, image])
+        response = client.models.generate_content(
+            model="gemini-2.5-flash",
+            contents=[prompt,image]
+        )
         result = response.text
 
         # Translate if needed

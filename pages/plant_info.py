@@ -3,11 +3,9 @@
 # =============================================
 
 import streamlit as st
-import google.generativeai as genai
 from config import GEMINI_API_KEY
-
+from google import genai
 # --- CONFIGURE GEMINI ---
-genai.configure(api_key="AIzaSyB0pia4BoKmN9MxANH4USkupHLMeYq8iKY")
 
 # --- PLANT DATABASE ---
 PLANTS = {
@@ -289,9 +287,8 @@ PLANTS = {
 # --- AI PLANT SEARCH ---
 def search_plant_ai(query):
     try:
-        model = genai.GenerativeModel(
-            "gemini-2.5-flash"
-        )
+        client = genai.Client(api_key=GEMINI_API_KEY)
+        
         prompt = f"""
         Give detailed information about this
         plant/tree/herb: {query}
@@ -312,7 +309,10 @@ def search_plant_ai(query):
         Indian farmers.
         Format clearly with numbers and labels.
         """
-        response = model.generate_content(prompt)
+        response = client.models.generate_content(
+            model="gemini-2.5-flash",
+            contents = prompt
+            ) 
         return response.text
     except Exception as e:
         return f"❌ Search failed: {str(e)}"
