@@ -1,0 +1,8 @@
+streamlit
+google-genai
+Pillow
+requests
+bcrypt
+gtts
+plotly
+deep-translator
