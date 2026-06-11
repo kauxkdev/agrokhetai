@@ -3,7 +3,6 @@
 # =============================================
 
 import streamlit as st
-
 # --- API KEYS ---
 try:
     GEMINI_API_KEY = st.secrets["GEMINI_API_KEY"]
