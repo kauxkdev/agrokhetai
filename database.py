@@ -4,7 +4,7 @@
 
 import sqlite3
 import bcrypt
-from config import DATABASE_NAME
+DATABASE_NAME="agrokhetai.db"
 
 # --- CONNECT TO DATABASE ---
 def get_connection():
