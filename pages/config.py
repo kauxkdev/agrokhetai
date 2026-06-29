@@ -8,7 +8,7 @@ try:
     GEMINI_API_KEY = st.secrets["GEMINI_API_KEY"]
     WEATHER_API_KEY = st.secrets["WEATHER_API_KEY"]
 except:
-    GEMINI_API_KEY = "AQ.Ab8RN6IUDgB3qrRF275wAbeuv-u8zGqrsKVdpvZ2rKbqrN0SoA"
+    GEMINI_API_KEY = "AQ.Ab8RN6ImU7Mev6YsQ1mRFubzyrfgSozyKY5_i1U1CXdk8tVUfQ"
     WEATHER_API_KEY = "6186e4f9d42ea1e07036b53bfd1848a4"
 
 # --- APP SETTINGS ---
